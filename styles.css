@@ -191,7 +191,7 @@ img {
 
 .nav-links {
   display: flex;
-  gap: 2.5rem;
+  gap: 1.75rem;
 }
 
 .nav-link {
@@ -767,6 +767,105 @@ img {
   margin-bottom: 0.5rem;
 }
 
+/* --- Certifications Section --- */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.cert-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: var(--transition-smooth);
+  backdrop-filter: blur(12px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cert-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--border-glow);
+  box-shadow: 0 15px 35px rgba(0, 242, 254, 0.08);
+}
+
+.cert-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.25rem;
+}
+
+.cert-icon {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 14px;
+  background: rgba(0, 242, 254, 0.08);
+  border: 1px solid var(--border-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--accent-cyan);
+}
+
+.cert-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.3rem 0.75rem;
+  border-radius: 50px;
+  border: 1px solid var(--border-light);
+}
+
+.cert-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.35;
+}
+
+.cert-issuer {
+  font-size: 0.95rem;
+  color: var(--accent-purple);
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.cert-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  background: rgba(0, 242, 254, 0.06);
+  border: 1px solid var(--border-glow);
+  transition: var(--transition-smooth);
+  width: fit-content;
+  text-decoration: none;
+}
+
+.cert-link-btn:hover {
+  background: var(--gradient-neon);
+  color: var(--bg-primary);
+  border-color: transparent;
+  box-shadow: 0 6px 20px rgba(0, 242, 254, 0.25);
+  transform: translateY(-2px);
+}
+
 /* --- Contact Section --- */
 .contact-grid {
   display: grid;
@@ -1056,6 +1155,10 @@ img {
 /* --- Responsive Breakpoints --- */
 
 @media (max-width: 1024px) {
+  .nav-links {
+    gap: 1.2rem;
+  }
+  
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 3rem;

@@ -163,6 +163,36 @@ const PORTFOLIO_DATA = {
       tags: ["10th Standard", "76.83%", "Core Science & Math"],
       icon: "fa-solid fa-school"
     }
+  ],
+  certifications: [
+    {
+      title: "Power BI Micro Course",
+      issuer: "Skill Course",
+      date: "March 2026",
+      url: "https://exam.skillcourse.in/student/view_certificate.php?uid=SC-7320B98A2C",
+      icon: "fa-solid fa-chart-pie"
+    },
+    {
+      title: "30-Days SQL Micro Course",
+      issuer: "Skill Course",
+      date: "February 2026",
+      url: "https://github.com/Abhisekh-devloper/SQL-COURSE-CERTIFICATE",
+      icon: "fa-solid fa-database"
+    },
+    {
+      title: "Data Analytics Job Simulation",
+      issuer: "theForage",
+      date: "January 2026",
+      url: "https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_697394f5b1ee4126d098d863_1769245746723_completion_certificate.pdf",
+      icon: "fa-solid fa-chart-line"
+    },
+    {
+      title: "Power Query Corporate Training Youtube Masterclass",
+      issuer: "Skill Course",
+      date: "October 2026",
+      url: "https://github.com/Abhisekh-devloper/Power-Query-Corporate-Training-Youtube-Masterclass",
+      icon: "fa-solid fa-filter"
+    }
   ]
 };
 
@@ -354,6 +384,37 @@ function initDataBinding() {
         </div>
       `;
       eduTimeline.appendChild(item);
+    });
+  }
+  
+  // Certifications Grid
+  const certGrid = document.getElementById("certifications-grid");
+  if (certGrid && data.certifications) {
+    certGrid.innerHTML = "";
+    data.certifications.forEach(cert => {
+      const card = document.createElement("div");
+      card.className = "cert-card reveal";
+      card.innerHTML = `
+        <div>
+          <div class="cert-card-header">
+            <div class="cert-icon">
+              <i class="${cert.icon}"></i>
+            </div>
+            <span class="cert-badge">${cert.date}</span>
+          </div>
+          <h4 class="cert-title">${cert.title}</h4>
+          <div class="cert-issuer">
+            <i class="fa-solid fa-award"></i>
+            <span>${cert.issuer}</span>
+          </div>
+        </div>
+        <div style="margin-top: 1.5rem;">
+          <a href="${cert.url}" target="_blank" class="cert-link-btn" rel="noopener noreferrer">
+            View Certificate <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
+          </a>
+        </div>
+      `;
+      certGrid.appendChild(card);
     });
   }
   
