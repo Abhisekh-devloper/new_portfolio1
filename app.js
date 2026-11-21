@@ -17,8 +17,7 @@ const PORTFOLIO_DATA = {
     socials: [
       { name: "github", url: "https://github.com/Abhisekh-devloper", icon: "fa-brands fa-github" },
       { name: "linkedin", url: "https://linkedin.com", icon: "fa-brands fa-linkedin-in" },
-      { name: "twitter", url: "https://twitter.com", icon: "fa-brands fa-x-twitter" },
-      { name: "codepen", url: "https://codepen.io", icon: "fa-brands fa-codepen" }
+      { name: "instagram", url: "https://www.instagram.com/a_b_h_i_s_e_k_h2.0?avpt=ZGV4bG9zMmFkZHMy", icon: "fa-brands fa-instagram" }
     ],
     typingRoles: [
       "Data Analyst & Visualization Specialist",
