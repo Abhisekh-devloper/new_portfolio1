@@ -135,6 +135,35 @@ const PORTFOLIO_DATA = {
       ],
       tech: ["SQL", "Python", "NumPy", "Pandas", "Matplotlib", "Seaborn", "Power BI"]
     }
+  ],
+  education: [
+    {
+      degree: "B.Tech in Computer Science & Engineering (CSE)",
+      institution: "Balasore College Of Engineering And Technology",
+      location: "Balasore, Odisha",
+      score: "CGPA: 8.0",
+      desc: "Comprehensive coursework in Computer Science & Engineering covering Data Structures, Database Management Systems (DBMS), Object-Oriented Programming, Operating Systems, and Algorithms.",
+      tags: ["B.Tech CSE", "CGPA: 8.0", "Data Structures", "DBMS", "Algorithms"],
+      icon: "fa-solid fa-graduation-cap"
+    },
+    {
+      degree: "Higher Secondary Education (12th)",
+      institution: "Remuna Higher Secondary School",
+      location: "Remuna, Balasore, Odisha",
+      score: "62% (First Division)",
+      desc: "Completed higher secondary curriculum in the Science stream with a focus on Mathematics, Physics, and Chemistry, graduating in First Division.",
+      tags: ["12th Standard", "62% (First Division)", "Science & Mathematics"],
+      icon: "fa-solid fa-building-columns"
+    },
+    {
+      degree: "Secondary School Examination (10th)",
+      institution: "Saraswati Sishu Bidya Mandir",
+      location: "Remuna, Balasore, Odisha",
+      score: "76.83%",
+      desc: "Completed secondary school education with strong academic distinction across Mathematics, Science, and foundational analytical subjects.",
+      tags: ["10th Standard", "76.83%", "Core Science & Math"],
+      icon: "fa-solid fa-school"
+    }
   ]
 };
 
@@ -285,6 +314,48 @@ function initDataBinding() {
     `;
     timeline.appendChild(item);
   });
+  
+  // Education Timeline
+  const eduTimeline = document.getElementById("education-timeline");
+  if (eduTimeline && data.education) {
+    eduTimeline.innerHTML = "";
+    data.education.forEach(edu => {
+      const item = document.createElement("div");
+      item.className = "timeline-item reveal";
+      
+      let tagsHTML = "";
+      if (edu.tags && edu.tags.length > 0) {
+        tagsHTML = `
+          <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.45rem; align-items: center;">
+            ${edu.tags.map(t => `<span class="project-tag" style="font-size: 0.72rem; padding: 0.2rem 0.65rem;">${t}</span>`).join("")}
+          </div>
+        `;
+      }
+      
+      const locationHTML = edu.location ? ` <span style="font-size: 0.85rem; color: var(--color-text-secondary); font-weight: 400; margin-left: 0.5rem;"><i class="fa-solid fa-location-dot" style="font-size: 0.8rem; margin-right: 0.25rem; color: var(--accent-cyan);"></i>${edu.location}</span>` : "";
+      const iconHTML = edu.icon ? `<i class="${edu.icon}" style="margin-right: 0.6rem; color: var(--accent-cyan);"></i>` : "";
+
+      item.innerHTML = `
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div>
+              <h4 class="timeline-role">${iconHTML}${edu.degree}</h4>
+              <div class="timeline-company">${edu.institution}${locationHTML}</div>
+            </div>
+            <span class="timeline-date" style="color: var(--accent-cyan); font-weight: 600; border-color: rgba(0, 242, 254, 0.35);">
+              <i class="fa-solid fa-award" style="margin-right: 0.35rem;"></i>${edu.score}
+            </span>
+          </div>
+          <div class="timeline-desc">
+            <p>${edu.desc}</p>
+            ${tagsHTML}
+          </div>
+        </div>
+      `;
+      eduTimeline.appendChild(item);
+    });
+  }
   
   // Projects
   renderProjects(data.projects);
