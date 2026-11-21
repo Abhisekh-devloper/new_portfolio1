@@ -110,33 +110,30 @@ const PORTFOLIO_DATA = {
   ],
   experience: [
     {
-      role: "Lead Interactive Engineer",
-      company: "Aetherial Labs",
-      duration: "2024 - Present",
+      role: "Python Developer Intern",
+      company: "Web Bocket Software Private Limited",
+      location: "Hybrid, Bhubaneswar",
+      duration: "May 2026 - Jul 2026",
       descList: [
-        "Architecting complex, responsive design systems and micro-frontends with high UX standards.",
-        "Created an interactive visual programming compiler tool reducing asset deployment cycles by 30%.",
-        "Mentoring team members on modular CSS variables, design tokens, and smooth, responsive animations."
-      ]
+        "Completed a 7-week intensive Python programming internship, developing foundational to intermediate skills for real-world applications and algorithmic problem solving.",
+        "Worked across 6 key domains: Core Python, Object-Oriented Programming (OOP), NumPy, Pandas, File Handling, and Advanced Functions.",
+        "Applied Python programming and data manipulation concepts through practical, problem-solving-based project development."
+      ],
+      tech: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Power BI"]
     },
     {
-      role: "Senior Full-Stack Developer",
-      company: "Quantum Systems",
-      duration: "2022 - 2024",
+      role: "IoT and Data Analytics Intern",
+      company: "National Institute Of Technology",
+      location: "On-site, Rourkela",
+      duration: "Jun 2025 - Jul 2025",
       descList: [
-        "Engineered secure, scalable Node.js/Python REST API endpoints handling over 2M requests daily.",
-        "Integrated modern real-time visualization frameworks boosting user interaction metrics by 45%.",
-        "Refactored styling layer into a performance-driven CSS architecture, removing redundant bundle footprint."
-      ]
-    },
-    {
-      role: "Software Developer",
-      company: "NovaTech Solutions",
-      duration: "2021 - 2022",
-      descList: [
-        "Built responsive SPAs for clients in fintech and logistics, prioritizing clean layouts and usability.",
-        "Optimized frontend bundle sizes, yielding a 40% speed increase in mobile paint/hydration cycles."
-      ]
+        "Gained hands-on experience in IoT and Data Analytics through practical, project-oriented work across 6 key technologies.",
+        "Used Python, NumPy, and Pandas for end-to-end data processing, feature manipulation, and exploratory data analysis.",
+        "Applied Matplotlib and Seaborn for high-impact data visualization, identifying behavioral patterns, distributions, and trends.",
+        "Worked with IoT architecture concepts and real-world sensory datasets for automated data collection, cleaning, and processing.",
+        "Developed practical competencies across 3 core areas: data analysis, visual reporting, and IoT-based smart applications."
+      ],
+      tech: ["SQL", "Python", "NumPy", "Pandas", "Matplotlib", "Seaborn", "Power BI"]
     }
   ]
 };
@@ -256,18 +253,33 @@ function initDataBinding() {
       bulletPointsHTML += `<li>${desc}</li>`;
     });
     
+    let techTagsHTML = "";
+    if (exp.tech && exp.tech.length > 0) {
+      techTagsHTML = `
+        <div style="margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center;">
+          <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-cyan); font-weight: 600; margin-right: 0.25rem;">
+            <i class="fa-solid fa-code"></i> Tech:
+          </span>
+          ${exp.tech.map(t => `<span class="project-tag" style="font-size: 0.72rem; padding: 0.2rem 0.65rem;">${t}</span>`).join("")}
+        </div>
+      `;
+    }
+    
+    const locationHTML = exp.location ? ` <span style="font-size: 0.85rem; color: var(--color-text-secondary); font-weight: 400; margin-left: 0.5rem;"><i class="fa-solid fa-location-dot" style="font-size: 0.8rem; margin-right: 0.25rem; color: var(--accent-cyan);"></i>${exp.location}</span>` : "";
+
     item.innerHTML = `
       <div class="timeline-dot"></div>
       <div class="timeline-content">
         <div class="timeline-header">
           <div>
             <h4 class="timeline-role">${exp.role}</h4>
-            <div class="timeline-company">${exp.company}</div>
+            <div class="timeline-company">${exp.company}${locationHTML}</div>
           </div>
           <span class="timeline-date">${exp.duration}</span>
         </div>
         <div class="timeline-desc">
           <ul>${bulletPointsHTML}</ul>
+          ${techTagsHTML}
         </div>
       </div>
     `;
