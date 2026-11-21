@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Abhisekh mohanty - Creative UI Engineer & Full-Stack Developer. Showcasing immersive user interfaces, scalable backend systems, and modern design tokens.">
+  <meta name="author" content="Abhisekh mohanty">
+  <title>Abhisekh mohanty | Data Analyst</title>
+  
+  <!-- FontAwesome for Premium Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Styling Link -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HTML5 Canvas Background Particle Network -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- ==========================================================================
+     HEADER / NAVIGATION
+     ========================================================================== -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#home" class="logo">
+        <i class="fa-solid fa-terminal"></i>
+        <span id="profile-name-nav">Abhisekh mohanty</span>
+      </a>
+      
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="menu-toggle" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars-staggered"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+     HERO SECTION
+     ========================================================================== -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="hero-tag">Available for Freelance & Full-time Roles</span>
+        <h1 class="hero-title">Engineering elegant<br><span>digital systems.</span></h1>
+        <div class="hero-subtitle">I'm a <span id="hero-role-typed"></span></div>
+        <p class="hero-desc">I craft scalable, high-performance web experiences using semantic architectures and immersive visual designs. Bridging technical performance with design precision.</p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn btn-primary">
+            View My Work <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            Let's Connect <i class="fa-regular fa-paper-plane"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="hero-visual">
+        <div class="glowing-circle"></div>
+        <div class="avatar-wrapper">
+          <div class="avatar-container">
+            <img id="profile-avatar" src="" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     ABOUT SECTION
+     ========================================================================== -->
+  <section id="about" class="section reveal">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      
+      <div class="about-grid">
+        <div class="about-details">
+          <p class="highlight-text">Hi, my name is <span id="profile-name">Abhisekh mohanty</span> and I build things for the web.</p>
+          <p id="profile-bio"></p>
+          <p>My philosophy is that good code should not only compile perfectly, but it should also look stunning. I enjoy writing custom high-performance animations, tailoring clean and accessible components, and orchestrating robust database-to-UI connections.</p>
+          
+          <div id="stats-grid" class="stats-grid">
+            <!-- Dynamically populated from app.js -->
+          </div>
+        </div>
+        
+        <div class="about-visual">
+          <div class="contact-form-wrapper" style="padding: 2.5rem; text-align: center; border-color: rgba(255, 255, 255, 0.04);">
+            <i class="fa-solid fa-quote-left" style="font-size: 2.5rem; color: var(--accent-cyan); opacity: 0.3; display: block; margin-bottom: 1.5rem;"></i>
+            <p style="font-style: italic; font-size: 1.15rem; color: var(--color-text-primary); line-height: 1.8; margin-bottom: 1.5rem;">
+              "Design is not just what it looks like and feels like. Design is how it works."
+            </p>
+            <span style="font-family: var(--font-mono); font-size: 0.85rem; text-transform: uppercase; color: var(--color-text-secondary); letter-spacing: 0.1em;">
+              — Steve Jobs
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     SKILLS SECTION
+     ========================================================================== -->
+  <section id="skills" class="section reveal">
+    <div class="container">
+      <h2 class="section-title">My Toolkit</h2>
+      
+      <div class="skills-grid">
+        <div class="skills-column">
+          <h3><i class="fa-solid fa-code"></i> Engineering & Tech</h3>
+          <div id="technical-skills-list" class="skill-list">
+            <!-- Dynamically populated from app.js -->
+          </div>
+        </div>
+        
+        <div class="skills-column">
+          <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Design & Creative</h3>
+          <div id="creative-skills-list" class="skill-list">
+            <!-- Dynamically populated from app.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     PROJECTS SECTION
+     ========================================================================== -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="projects-header">
+        <h2 class="section-title">Selected Projects</h2>
+        <div class="filter-tabs">
+          <div class="filter-tab active" data-filter="all">All</div>
+          <div class="filter-tab" data-filter="frontend">Frontend</div>
+          <div class="filter-tab" data-filter="backend">Backend</div>
+          <div class="filter-tab" data-filter="fullstack">Full-Stack</div>
+        </div>
+      </div>
+      
+      <div id="projects-grid" class="projects-grid">
+        <!-- Dynamically populated from app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     EXPERIENCE SECTION
+     ========================================================================== -->
+  <section id="experience" class="section">
+    <div class="container">
+      <h2 class="section-title">Career Timeline</h2>
+      
+      <div id="experience-timeline" class="timeline">
+        <!-- Dynamically populated from app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     CONTACT SECTION
+     ========================================================================== -->
+  <section id="contact" class="section reveal">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Let's start a project together</h3>
+          <p>Whether you have a fully formed idea, want to talk about a full-time role, or just want to chat about tech—my inbox is open.</p>
+          
+          <div class="contact-channels">
+            <div class="contact-channel">
+              <div class="channel-icon"><i class="fa-regular fa-envelope"></i></div>
+              <div>
+                <div class="channel-title">Email Me</div>
+                <div class="channel-value">abhishekmohanty239@gmail.com</div>
+              </div>
+            </div>
+            
+            <div class="contact-channel">
+              <div class="channel-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <div class="channel-title">Location</div>
+                <div class="channel-value">Remuna,Balasore</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-form-wrapper">
+          <!-- Success Screen overlay -->
+          <div id="form-success-overlay" class="form-success-overlay">
+            <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <h4 class="success-title">Message Sent!</h4>
+            <p class="success-text">Thank you, <span id="success-sender" style="color: var(--accent-cyan); font-weight: 600;"></span>! Your transmission was successfully dispatched. I'll get back to you shortly.</p>
+            <button id="success-close-btn" class="btn btn-secondary">Send Another Message</button>
+          </div>
+
+          <!-- Active Contact Form -->
+          <form id="contact-form" class="contact-form">
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="form-name">Full Name *</label>
+                <input type="text" id="form-name" placeholder="John Doe" required>
+              </div>
+              <div class="form-group">
+                <label for="form-email">Email Address *</label>
+                <input type="email" id="form-email" placeholder="john@example.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="form-subject">Subject</label>
+              <input type="text" id="form-subject" placeholder="Project Discussion">
+            </div>
+            <div class="form-group">
+              <label for="form-message">Message *</label>
+              <textarea id="form-message" placeholder="Describe your project, timeline, and goals..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              Send Message <i class="fa-regular fa-paper-plane" style="margin-left: 0.25rem;"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     FOOTER
+     ========================================================================== -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="logo">
+        <i class="fa-solid fa-terminal"></i>
+        <span id="profile-footer-name">Abhisekh mohanty</span>
+      </div>
+      
+      <div class="copyright">
+        &copy; <span id="footer-year">2026</span> All rights reserved. Designed & Engineered with passion.
+      </div>
+      
+      <div class="social-links social-links-target">
+        <!-- Dynamically populated from app.js -->
+      </div>
+    </div>
+  </footer>
+
+  <!-- Custom JavaScript Hook -->
+  <script src="app.js"></script>
+  
+  <script>
+    // Autofill current year dynamically in footer
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
