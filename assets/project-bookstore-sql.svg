@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a071c"/>
+      <stop offset="50%" stop-color="#140f2d"/>
+      <stop offset="100%" stop-color="#071329"/>
+    </linearGradient>
+    <linearGradient id="purpleGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9b51e0"/>
+      <stop offset="100%" stop-color="#f2994a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="360" fill="url(#bg)"/>
+
+  <!-- Header Badge -->
+  <rect x="40" y="30" width="220" height="28" rx="14" fill="rgba(242,153,74,0.12)" stroke="#f2994a" stroke-opacity="0.35"/>
+  <circle cx="56" cy="44" r="5" fill="#f2994a"/>
+  <text x="70" y="49" fill="#f2994a" font-family="'Outfit', sans-serif" font-size="12" font-weight="600" letter-spacing="1">BOOKSTORE DATABASE</text>
+
+  <!-- Left: Database Schema Visualizer -->
+  <g transform="translate(40, 75)">
+    <!-- Table 1: Books -->
+    <rect width="230" height="110" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+    <rect width="230" height="28" rx="10" fill="rgba(155,81,224,0.2)"/>
+    <text x="14" y="19" fill="#f5f6fa" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">📖 books</text>
+    <text x="14" y="48" fill="#00f2fe" font-family="'JetBrains Mono', monospace" font-size="10">PK  book_id</text> <text x="140" y="48" fill="#575a7c" font-family="'JetBrains Mono', monospace" font-size="10">INT</text>
+    <text x="14" y="68" fill="#8c90b5" font-family="'JetBrains Mono', monospace" font-size="10">    title, genre</text> <text x="140" y="68" fill="#575a7c" font-family="'JetBrains Mono', monospace" font-size="10">VARCHAR</text>
+    <text x="14" y="88" fill="#8c90b5" font-family="'JetBrains Mono', monospace" font-size="10">    price, stock</text> <text x="140" y="88" fill="#575a7c" font-family="'JetBrains Mono', monospace" font-size="10">DECIMAL</text>
+    <text x="14" y="104" fill="#f2994a" font-family="'JetBrains Mono', monospace" font-size="10">FK  author_id</text> <text x="140" y="104" fill="#575a7c" font-family="'JetBrains Mono', monospace" font-size="10">INT</text>
+
+    <!-- Table 2: Orders -->
+    <g transform="translate(0, 125)">
+      <rect width="230" height="115" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+      <rect width="230" height="28" rx="10" fill="rgba(242,153,74,0.2)"/>
+      <text x="14" y="19" fill="#f5f6fa" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">🛒 orders & items</text>
+      <text x="14" y="48" fill="#00f2fe" font-family="'JetBrains Mono', monospace" font-size="10">PK  order_id</text> <text x="140" y="48" fill="#575a7c" font-family="'JetBrains Mono', monospace" font-size="10">INT</text>
+      <text x="14" y="68" fill="#f2994a" font-family="'JetBrains Mono', monospace" font-size="10">FK  customer_id</text> <text x="140" y="68" fill="#575a7c" font-family="'JetBrains Mono', monospace" font-size="10">INT</text>
+      <text x="14" y="88" fill="#f2994a" font-family="'JetBrains Mono', monospace" font-size="10">FK  book_id</text> <text x="140" y="88" fill="#575a7c" font-family="'JetBrains Mono', monospace" font-size="10">INT</text>
+      <text x="14" y="108" fill="#8c90b5" font-family="'JetBrains Mono', monospace" font-size="10">    total_amount</text> <text x="140" y="108" fill="#575a7c" font-family="'JetBrains Mono', monospace" font-size="10">DECIMAL</text>
+    </g>
+  </g>
+
+  <!-- Right: Sales Insights Query Result -->
+  <g transform="translate(290, 75)">
+    <rect width="270" height="240" rx="12" fill="#030412" stroke="rgba(242,153,74,0.2)"/>
+    <text x="16" y="26" fill="#f2994a" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">GENRE PERFORMANCE (SQL)</text>
+    <line x1="0" y1="38" x2="270" y2="38" stroke="rgba(255,255,255,0.06)"/>
+
+    <!-- Bar 1: Sci-Fi -->
+    <text x="16" y="65" fill="#f5f6fa" font-family="'Outfit', sans-serif" font-size="11">Science Fiction & Tech</text>
+    <text x="215" y="65" fill="#00f2fe" font-family="'JetBrains Mono', monospace" font-size="11">$38.2K</text>
+    <rect x="16" y="73" width="238" height="6" rx="3" fill="rgba(255,255,255,0.08)"/>
+    <rect x="16" y="73" width="200" height="6" rx="3" fill="#00f2fe"/>
+
+    <!-- Bar 2: Business -->
+    <text x="16" y="105" fill="#f5f6fa" font-family="'Outfit', sans-serif" font-size="11">Business & Finance</text>
+    <text x="215" y="105" fill="#9b51e0" font-family="'JetBrains Mono', monospace" font-size="11">$29.5K</text>
+    <rect x="16" y="113" width="238" height="6" rx="3" fill="rgba(255,255,255,0.08)"/>
+    <rect x="16" y="113" width="160" height="6" rx="3" fill="#9b51e0"/>
+
+    <!-- Bar 3: Fiction -->
+    <text x="16" y="145" fill="#f5f6fa" font-family="'Outfit', sans-serif" font-size="11">Literature & Fiction</text>
+    <text x="215" y="145" fill="#f2994a" font-family="'JetBrains Mono', monospace" font-size="11">$24.1K</text>
+    <rect x="16" y="153" width="238" height="6" rx="3" fill="rgba(255,255,255,0.08)"/>
+    <rect x="16" y="153" width="130" height="6" rx="3" fill="#f2994a"/>
+
+    <!-- Footer Stats -->
+    <line x1="16" y1="180" x2="254" y2="180" stroke="rgba(255,255,255,0.06)"/>
+    <text x="16" y="205" fill="#8c90b5" font-family="'Outfit', sans-serif" font-size="11">Inventory Turnover Rate</text>
+    <text x="16" y="225" fill="#00f2fe" font-family="'JetBrains Mono', monospace" font-size="16" font-weight="700">94.8% • In Stock</text>
+  </g>
+</svg>

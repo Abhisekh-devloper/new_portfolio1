@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080718"/>
+      <stop offset="50%" stop-color="#120c24"/>
+      <stop offset="100%" stop-color="#051520"/>
+    </linearGradient>
+    <linearGradient id="pulseCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="100%" stop-color="#4facfe"/>
+    </linearGradient>
+    <linearGradient id="pulsePink" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff0844"/>
+      <stop offset="100%" stop-color="#ffb199"/>
+    </linearGradient>
+    <linearGradient id="ringOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f83600"/>
+      <stop offset="100%" stop-color="#fe8c00"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="600" height="360" fill="url(#bg)"/>
+
+  <!-- Header Badge -->
+  <rect x="40" y="30" width="200" height="28" rx="14" fill="rgba(255,8,68,0.1)" stroke="#ff0844" stroke-opacity="0.35"/>
+  <circle cx="56" cy="44" r="5" fill="#ff0844"/>
+  <text x="70" y="49" fill="#ff758c" font-family="'Outfit', sans-serif" font-size="12" font-weight="600" letter-spacing="1">AURAFIT HEALTH TRACKER</text>
+
+  <!-- Fitness Rings / Activity Circles -->
+  <g transform="translate(140, 195)">
+    <!-- Outer Ring (Move / Calories) -->
+    <circle cx="0" cy="0" r="85" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="12"/>
+    <circle cx="0" cy="0" r="85" fill="none" stroke="url(#pulsePink)" stroke-width="12" stroke-dasharray="534" stroke-dashoffset="130" stroke-linecap="round" transform="rotate(-90)"/>
+
+    <!-- Middle Ring (Exercise) -->
+    <circle cx="0" cy="0" r="68" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="12"/>
+    <circle cx="0" cy="0" r="68" fill="none" stroke="url(#pulseCyan)" stroke-width="12" stroke-dasharray="427" stroke-dashoffset="90" stroke-linecap="round" transform="rotate(-90)"/>
+
+    <!-- Inner Ring (Stand / Hydration) -->
+    <circle cx="0" cy="0" r="51" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="12"/>
+    <circle cx="0" cy="0" r="51" fill="none" stroke="url(#ringOrange)" stroke-width="12" stroke-dasharray="320" stroke-dashoffset="80" stroke-linecap="round" transform="rotate(-90)"/>
+
+    <!-- Heart Rate Center -->
+    <text x="0" y="-5" text-anchor="middle" fill="#ff758c" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700">128</text>
+    <text x="0" y="14" text-anchor="middle" fill="#8c90b5" font-family="'Outfit', sans-serif" font-size="10">BPM</text>
+  </g>
+
+  <!-- Right Metrics Cards -->
+  <g transform="translate(290, 75)">
+    <!-- Card 1: Active Calories -->
+    <rect width="270" height="68" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)"/>
+    <circle cx="36" cy="34" r="18" fill="rgba(255,8,68,0.15)"/>
+    <text x="36" y="39" text-anchor="middle" fill="#ff0844" font-family="'Outfit', sans-serif" font-size="16">🔥</text>
+    <text x="68" y="28" fill="#8c90b5" font-family="'Outfit', sans-serif" font-size="11">Active Calories</text>
+    <text x="68" y="52" fill="#f5f6fa" font-family="'JetBrains Mono', monospace" font-size="18" font-weight="700">742 <tspan fill="#ff758c" font-size="12">/ 850 kcal</tspan></text>
+
+    <!-- Card 2: Daily Steps -->
+    <g transform="translate(0, 80)">
+      <rect width="270" height="68" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)"/>
+      <circle cx="36" cy="34" r="18" fill="rgba(0,242,254,0.15)"/>
+      <text x="36" y="39" text-anchor="middle" fill="#00f2fe" font-family="'Outfit', sans-serif" font-size="16">👟</text>
+      <text x="68" y="28" fill="#8c90b5" font-family="'Outfit', sans-serif" font-size="11">Daily Step Goal</text>
+      <text x="68" y="52" fill="#f5f6fa" font-family="'JetBrains Mono', monospace" font-size="18" font-weight="700">10,482 <tspan fill="#00f2fe" font-size="12">Steps</tspan></text>
+    </g>
+
+    <!-- Card 3: ECG / Heart Trendline -->
+    <g transform="translate(0, 160)">
+      <rect width="270" height="74" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)"/>
+      <path d="M 20 40 L 60 40 L 75 18 L 88 58 L 98 28 L 108 44 L 118 40 L 160 40 L 175 18 L 188 58 L 198 28 L 208 44 L 250 40" fill="none" stroke="#00f2fe" stroke-width="2.2" filter="url(#glow)"/>
+      <text x="20" y="65" fill="#8c90b5" font-family="'JetBrains Mono', monospace" font-size="10">ECG MONITOR • NORMAL RHYTHM</text>
+    </g>
+  </g>
+</svg>

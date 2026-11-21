@@ -15,7 +15,7 @@ const PORTFOLIO_DATA = {
     resumeUrl: "#",
     avatarUrl: "./assets/avatar.png",
     socials: [
-      { name: "github", url: "https://github.com", icon: "fa-brands fa-github" },
+      { name: "github", url: "https://github.com/Abhisekh-devloper", icon: "fa-brands fa-github" },
       { name: "linkedin", url: "https://linkedin.com", icon: "fa-brands fa-linkedin-in" },
       { name: "twitter", url: "https://twitter.com", icon: "fa-brands fa-x-twitter" },
       { name: "codepen", url: "https://codepen.io", icon: "fa-brands fa-codepen" }
@@ -49,33 +49,63 @@ const PORTFOLIO_DATA = {
   projects: [
     {
       id: 1,
-      title: "Vigil CyberSecurity Dashboard",
-      desc: "A futuristic real-time network attack visualizer and control center utilizing WebSockets and modern canvas graphics.",
-      img: "./assets/project-dashboard.png",
-      tags: ["React.js", "Canvas API", "Socket.io", "Tailwind"],
-      category: "frontend",
-      github: "https://github.com",
-      demo: "https://demo.com"
+      title: "SaaS Business Analytics",
+      desc: "Comprehensive subscription metrics and business intelligence system tracking MRR, customer churn, Lifetime Value (LTV), cohort retention curves, and revenue forecasting.",
+      img: "./assets/project-saas.svg",
+      tags: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Business Analytics"],
+      category: "analytics",
+      github: "https://github.com/Abhisekh-devloper/saas-business-analytics",
+      demo: "https://github.com/Abhisekh-devloper/saas-business-analytics"
     },
     {
       id: 2,
-      title: "Synthetix AI Code Editor",
-      desc: "A browser-based cloud IDE featuring real-time collaborative editing, live compilation, and inline AI suggestions.",
-      img: "./assets/project-editor.png",
-      tags: ["TypeScript", "Next.js", "Monaco Editor", "AI SDK"],
-      category: "fullstack",
-      github: "https://github.com",
-      demo: "https://demo.com"
+      title: "Smart Employee Management System",
+      desc: "Centralized workforce administration system providing automated attendance records, department performance metrics, salary processing, and employee database operations.",
+      img: "./assets/project-employee.svg",
+      tags: ["Python", "SQL", "Flask / Streamlit", "CRUD Architecture", "Data Management"],
+      category: "software",
+      github: "https://github.com/Abhisekh-devloper/emp_management",
+      demo: "https://github.com/Abhisekh-devloper/emp_management"
     },
     {
       id: 3,
-      title: "Apex Crypto Analytics",
-      desc: "A responsive analytics terminal tracking global cryptocurrency trends, indices, and asset forecasting using 3D chart systems.",
-      img: "./assets/project-crypto.png",
-      tags: ["Vue.js", "D3.js", "Three.js", "FastAPI"],
-      category: "backend",
-      github: "https://github.com",
-      demo: "https://demo.com"
+      title: "AuraFit - Premium Fitness & Health Tracker",
+      desc: "Interactive wellness application designed to log daily workouts, compute calorie expenditure, monitor body metrics, and chart long-term fitness trendlines.",
+      img: "./assets/project-aurafit.svg",
+      tags: ["JavaScript", "HTML5/CSS3", "Chart.js", "Python / API", "Health Analytics"],
+      category: "software",
+      github: "https://github.com/Abhisekh-devloper/fitness_tracker",
+      demo: "https://github.com/Abhisekh-devloper/fitness_tracker"
+    },
+    {
+      id: 4,
+      title: "E-Commerce Data Analysis (SQL Project)",
+      desc: "In-depth transactional SQL analysis utilizing CTEs and window functions to uncover customer purchasing behaviors, sales seasonality, product profitability, and RFM segmentation.",
+      img: "./assets/project-ecommerce-sql.svg",
+      tags: ["SQL", "PostgreSQL / MySQL", "Window Functions", "CTEs", "RFM Segmentation", "Data Modeling"],
+      category: "sql",
+      github: "https://github.com/Abhisekh-devloper/E-Commerce-Data-Analysis-SQL-PROJECT-",
+      demo: "https://github.com/Abhisekh-devloper/E-Commerce-Data-Analysis-SQL-PROJECT-"
+    },
+    {
+      id: 5,
+      title: "Online Book Store (SQL Project)",
+      desc: "Relational database modeling and query optimization for an online bookstore analyzing sales performance, author popularity, inventory replenishment, and customer lifetime value.",
+      img: "./assets/project-bookstore-sql.svg",
+      tags: ["SQL", "Database Design", "Relational Joins", "Aggregations", "Query Optimization"],
+      category: "sql",
+      github: "https://github.com/Abhisekh-devloper/Online-book-store-SQL-PROJECT-",
+      demo: "https://github.com/Abhisekh-devloper/Online-book-store-SQL-PROJECT-"
+    },
+    {
+      id: 6,
+      title: "Power BI Business Intelligence Dashboard",
+      desc: "Interactive multi-page executive BI dashboard delivering real-time KPI metrics, DAX calculated measures, regional performance drill-downs, and automated visual reports.",
+      img: "./assets/project-powerbi.svg",
+      tags: ["Power BI", "DAX", "Power Query", "Data Modeling", "Interactive Dashboards", "KPI Analytics"],
+      category: "bi",
+      github: "https://github.com/Abhisekh-devloper/POWER-BI-PROJECT",
+      demo: "https://github.com/Abhisekh-devloper/POWER-BI-PROJECT"
     }
   ],
   experience: [
@@ -264,18 +294,18 @@ function renderProjects(projectsArray) {
     
     card.innerHTML = `
       <div class="project-img">
-        <img src="${p.img}" alt="${p.title}">
+        <img src="${p.img}" alt="${p.title}" loading="lazy">
         <div class="project-overlay">
-          <a href="${p.github}" target="_blank" class="project-overlay-btn" aria-label="View Code">
+          <a href="${p.github}" target="_blank" class="project-overlay-btn" aria-label="View Code on GitHub" title="View Code on GitHub">
             <i class="fa-brands fa-github"></i>
           </a>
-          <a href="${p.demo}" target="_blank" class="project-overlay-btn" aria-label="View Demo">
+          <a href="${p.demo || p.github}" target="_blank" class="project-overlay-btn" aria-label="Open Project" title="Open Project Repository">
             <i class="fa-solid fa-arrow-up-right-from-square"></i>
           </a>
         </div>
       </div>
       <div class="project-content">
-        <h4 class="project-title">${p.title}</h4>
+        <h4 class="project-title"><a href="${p.github}" target="_blank" style="color: inherit; text-decoration: none;">${p.title}</a></h4>
         <p class="project-desc">${p.desc}</p>
         <div class="project-tags">${tagsHTML}</div>
       </div>

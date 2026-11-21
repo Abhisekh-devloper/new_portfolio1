@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050518"/>
+      <stop offset="50%" stop-color="#0a122e"/>
+      <stop offset="100%" stop-color="#140b28"/>
+    </linearGradient>
+    <linearGradient id="cyanBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="100%" stop-color="#4facfe"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9b51e0"/>
+      <stop offset="100%" stop-color="#7000ff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="360" fill="url(#bg)"/>
+
+  <!-- Header Badge -->
+  <rect x="40" y="30" width="220" height="28" rx="14" fill="rgba(155,81,224,0.1)" stroke="#9b51e0" stroke-opacity="0.35"/>
+  <circle cx="56" cy="44" r="5" fill="#9b51e0"/>
+  <text x="70" y="49" fill="#9b51e0" font-family="'Outfit', sans-serif" font-size="12" font-weight="600" letter-spacing="1">EMPLOYEE MANAGEMENT</text>
+
+  <!-- Left Sidebar / Stats Widget -->
+  <g transform="translate(40, 75)">
+    <rect width="180" height="240" rx="14" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.06)"/>
+    
+    <text x="20" y="30" fill="#8c90b5" font-family="'Outfit', sans-serif" font-size="12" font-weight="600">HEADCOUNT STATS</text>
+    <text x="20" y="65" fill="#f5f6fa" font-family="'JetBrains Mono', monospace" font-size="28" font-weight="700">1,248</text>
+    <text x="20" y="85" fill="#00f2fe" font-family="'Outfit', sans-serif" font-size="11">● Active Workforce</text>
+
+    <!-- Mini Progress Bars -->
+    <text x="20" y="125" fill="#8c90b5" font-family="'Outfit', sans-serif" font-size="11">Engineering (45%)</text>
+    <rect x="20" y="133" width="140" height="6" rx="3" fill="rgba(255,255,255,0.08)"/>
+    <rect x="20" y="133" width="63" height="6" rx="3" fill="#00f2fe"/>
+
+    <text x="20" y="165" fill="#8c90b5" font-family="'Outfit', sans-serif" font-size="11">Analytics & BI (32%)</text>
+    <rect x="20" y="173" width="140" height="6" rx="3" fill="rgba(255,255,255,0.08)"/>
+    <rect x="20" y="173" width="45" height="6" rx="3" fill="#9b51e0"/>
+
+    <text x="20" y="205" fill="#8c90b5" font-family="'Outfit', sans-serif" font-size="11">Operations (23%)</text>
+    <rect x="20" y="213" width="140" height="6" rx="3" fill="rgba(255,255,255,0.08)"/>
+    <rect x="20" y="213" width="32" height="6" rx="3" fill="#4facfe"/>
+  </g>
+
+  <!-- Right Table / Employee Records Card -->
+  <g transform="translate(240, 75)">
+    <rect width="320" height="240" rx="14" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.06)"/>
+
+    <!-- Table Header -->
+    <rect x="12" y="12" width="296" height="34" rx="8" fill="rgba(255,255,255,0.035)"/>
+    <text x="26" y="34" fill="#8c90b5" font-family="'JetBrains Mono', monospace" font-size="11">EMPLOYEE</text>
+    <text x="140" y="34" fill="#8c90b5" font-family="'JetBrains Mono', monospace" font-size="11">ROLE</text>
+    <text x="240" y="34" fill="#8c90b5" font-family="'JetBrains Mono', monospace" font-size="11">STATUS</text>
+
+    <!-- Row 1 -->
+    <circle cx="34" cy="72" r="12" fill="rgba(0,242,254,0.15)"/>
+    <text x="31" y="76" fill="#00f2fe" font-family="'Outfit', sans-serif" font-size="10" font-weight="700">A</text>
+    <text x="54" y="76" fill="#f5f6fa" font-family="'Outfit', sans-serif" font-size="12" font-weight="600">Alex Reed</text>
+    <text x="140" y="76" fill="#8c90b5" font-family="'Outfit', sans-serif" font-size="11">Data Lead</text>
+    <rect x="235" y="63" width="60" height="20" rx="10" fill="rgba(0,242,254,0.1)"/>
+    <text x="248" y="77" fill="#00f2fe" font-family="'Outfit', sans-serif" font-size="10" font-weight="600">Active</text>
+
+    <!-- Row 2 -->
+    <circle cx="34" cy="118" r="12" fill="rgba(155,81,224,0.15)"/>
+    <text x="30" y="122" fill="#9b51e0" font-family="'Outfit', sans-serif" font-size="10" font-weight="700">M</text>
+    <text x="54" y="122" fill="#f5f6fa" font-family="'Outfit', sans-serif" font-size="12" font-weight="600">Maya Patel</text>
+    <text x="140" y="122" fill="#8c90b5" font-family="'Outfit', sans-serif" font-size="11">BI Analyst</text>
+    <rect x="235" y="109" width="60" height="20" rx="10" fill="rgba(0,242,254,0.1)"/>
+    <text x="248" y="123" fill="#00f2fe" font-family="'Outfit', sans-serif" font-size="10" font-weight="600">Active</text>
+
+    <!-- Row 3 -->
+    <circle cx="34" cy="164" r="12" fill="rgba(79,172,254,0.15)"/>
+    <text x="31" y="168" fill="#4facfe" font-family="'Outfit', sans-serif" font-size="10" font-weight="700">D</text>
+    <text x="54" y="168" fill="#f5f6fa" font-family="'Outfit', sans-serif" font-size="12" font-weight="600">Devon Lee</text>
+    <text x="140" y="168" fill="#8c90b5" font-family="'Outfit', sans-serif" font-size="11">Engineer</text>
+    <rect x="235" y="155" width="60" height="20" rx="10" fill="rgba(255,255,255,0.06)"/>
+    <text x="246" y="169" fill="#8c90b5" font-family="'Outfit', sans-serif" font-size="10">Remote</text>
+
+    <!-- Row 4 -->
+    <circle cx="34" cy="210" r="12" fill="rgba(0,242,254,0.15)"/>
+    <text x="31" y="214" fill="#00f2fe" font-family="'Outfit', sans-serif" font-size="10" font-weight="700">S</text>
+    <text x="54" y="214" fill="#f5f6fa" font-family="'Outfit', sans-serif" font-size="12" font-weight="600">Sara Cole</text>
+    <text x="140" y="214" fill="#8c90b5" font-family="'Outfit', sans-serif" font-size="11">HR Ops</text>
+    <rect x="235" y="201" width="60" height="20" rx="10" fill="rgba(0,242,254,0.1)"/>
+    <text x="248" y="215" fill="#00f2fe" font-family="'Outfit', sans-serif" font-size="10" font-weight="600">Active</text>
+  </g>
+</svg>
