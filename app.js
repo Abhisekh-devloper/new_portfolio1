@@ -10,8 +10,8 @@
 const PORTFOLIO_DATA = {
   profile: {
     name: "Abhisekh mohanty",
-    title: "Aspiring Data Analyst",
-    bio: "I specialize in engineering high-fidelity, interactive, and visually stunning digital products. Crossing the boundaries between modern frontend design systems and robust backend architecture.",
+    title: "Data Analyst & Python Developer",
+    bio: "I specialize in data analysis, exploratory data analysis (EDA), predictive modeling, and business intelligence dashboards. With strong hands-on expertise in Python, SQL, Pandas, NumPy, Matplotlib, Seaborn, and Power BI, I transform complex datasets into clear, actionable business strategies and automated data pipelines.",
     resumeUrl: "#",
     avatarUrl: "./assets/avatar.png",
     socials: [
@@ -27,9 +27,9 @@ const PORTFOLIO_DATA = {
     ]
   },
   stats: [
-    { number: "5+", label: "Years Experience" },
-    { number: "35+", label: "Projects Completed" },
-    { number: "15+", label: "Happy Clients" }
+    { number: "Fresher", label: "Experience Level" },
+    { number: "2", label: "Internship Experiences" },
+    { number: "6+", label: "Analytics Projects" }
   ],
   skills: {
     technical: [
@@ -224,8 +224,9 @@ function initDataBinding() {
   data.stats.forEach(st => {
     const card = document.createElement("div");
     card.className = "stat-card";
+    const isWord = st.number.length > 3;
     card.innerHTML = `
-      <span class="stat-num">${st.number}</span>
+      <span class="stat-num" ${isWord ? 'style="font-size: 1.65rem;"' : ''}>${st.number}</span>
       <span class="stat-lbl">${st.label}</span>
     `;
     statsGrid.appendChild(card);
