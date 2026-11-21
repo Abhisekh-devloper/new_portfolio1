@@ -34,16 +34,16 @@ const PORTFOLIO_DATA = {
   ],
   skills: {
     technical: [
-      { name: "React.js / Next.js", percent: 95 },
-      { name: "JavaScript / TypeScript", percent: 90 },
-      { name: "Node.js & Express", percent: 85 },
-      { name: "Python / Django", percent: 80 }
+      { name: "Python", percent: 92, icon: "fa-brands fa-python" },
+      { name: "SQL", percent: 90, icon: "fa-solid fa-database" },
+      { name: "Pandas", percent: 88, icon: "fa-solid fa-table" },
+      { name: "NumPy", percent: 85, icon: "fa-solid fa-calculator" }
     ],
     creative: [
-      { name: "UI/UX & Interactive Design", percent: 90 },
-      { name: "CSS Grid & Smooth Animations", percent: 95 },
-      { name: "Figma Prototyping", percent: 85 },
-      { name: "SVG / Canvas Interactive Media", percent: 75 }
+      { name: "PowerBI", percent: 90, icon: "fa-solid fa-chart-pie" },
+      { name: "Matplotlib", percent: 85, icon: "fa-solid fa-chart-line" },
+      { name: "Seaborn", percent: 82, icon: "fa-solid fa-chart-area" },
+      { name: "Advance Excel", percent: 92, icon: "fa-solid fa-file-excel" }
     ]
   },
   projects: [
@@ -182,9 +182,10 @@ function initDataBinding() {
   data.skills.technical.forEach(sk => {
     const item = document.createElement("div");
     item.className = "skill-item";
+    const iconHTML = sk.icon ? `<i class="${sk.icon}" style="margin-right: 0.6rem; color: var(--accent-cyan); width: 1.2rem; text-align: center;"></i>` : "";
     item.innerHTML = `
       <div class="skill-info">
-        <span class="skill-name">${sk.name}</span>
+        <span class="skill-name">${iconHTML}${sk.name}</span>
         <span class="skill-percent">${sk.percent}%</span>
       </div>
       <div class="skill-bar">
@@ -200,9 +201,10 @@ function initDataBinding() {
   data.skills.creative.forEach(sk => {
     const item = document.createElement("div");
     item.className = "skill-item";
+    const iconHTML = sk.icon ? `<i class="${sk.icon}" style="margin-right: 0.6rem; color: var(--accent-cyan); width: 1.2rem; text-align: center;"></i>` : "";
     item.innerHTML = `
       <div class="skill-info">
-        <span class="skill-name">${sk.name}</span>
+        <span class="skill-name">${iconHTML}${sk.name}</span>
         <span class="skill-percent">${sk.percent}%</span>
       </div>
       <div class="skill-bar">
